@@ -1,28 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 
-class loginpage extends StatelessWidget {
+class loginpage extends StatefulWidget {
+  @override
+  State<loginpage> createState() => _loginpageState();
+}
+
+class _loginpageState extends State<loginpage> {
+  String name = "";
+
+  get container => null;
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,
 
       child: SingleChildScrollView(
+        physics: AlwaysScrollableScrollPhysics(),
         child: Column(
           children: [
             TextField(),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.asset("assets/images/login_image.png", 
+              child: Image.asset("assets/images/login_image.png",
               fit: BoxFit.cover, ),
             ),
             SizedBox(
               height: 20.0
               ),
-              
-      
+
+
             Text(
-              "Welcome",
+              "Welcome $name",
                style: TextStyle(fontSize: 28 ,
                 fontWeight: FontWeight.bold),
                 ),
@@ -35,7 +44,13 @@ class loginpage extends StatelessWidget {
                 decoration: InputDecoration
               (hintText:"Enter username",
               labelText: "Username"),
-              
+                onChanged: (value){
+                  name = value;
+                  setState(() {
+
+                  });
+                },
+
               ),
               TextFormField(
                 obscureText: true,
@@ -43,7 +58,8 @@ class loginpage extends StatelessWidget {
               (hintText:"Enter Password",
               labelText: "Password"),)],),
             ),
-      
+
+//elevated button can also be replaced with  text button.
             ElevatedButton(child: Text ("login"),
             style: TextButton.styleFrom( minimumSize: Size(120, 50)),
             onPressed: () {
