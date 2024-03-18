@@ -1,0 +1,11 @@
+{
+    "dart.debugSdkLibraries": false,
+    "dart.sdkPath": "C:\\Users\\Leo\\Downloads\\flutter_windows_3.19.3-stable\\flutter",
+    "dart.flutterSdkPath": "C:\\Users\\Leo\\Downloads\\flutter_windows_3.19.3-stable\\flutter",
+    "[dart]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+        "editor.suggest.insertMode": "replace"
+    }
+}
