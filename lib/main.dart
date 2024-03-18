@@ -5,7 +5,7 @@ import 'package:flutter_catalog/utils/routes.dart';
 
 
 void main (){
-  runApp(MyApp());
+  runApp(const MyApp());
 
 }
 

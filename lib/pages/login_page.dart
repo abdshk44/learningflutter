@@ -8,6 +8,7 @@ class loginpage extends StatefulWidget {
 
 class _loginpageState extends State<loginpage> {
   String name = "";
+  bool changebutton = false;
 
   get container => null;
   @override
@@ -58,14 +59,37 @@ class _loginpageState extends State<loginpage> {
               (hintText:"Enter Password",
               labelText: "Password"),)],),
             ),
-
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    changebutton = true;
+                  });
+                  //  Navigator. pushNamed(context, MyRoutes.homerouts);
+                },
+             child: AnimatedContainer(
+              duration: Duration(seconds: 1),
+              width:  changebutton ? 50 : 150, 
+              height: 50,
+              alignment: Alignment.center,
+              child: Text(
+                "login",
+              style: TextStyle (color: Colors. white,
+               fontWeight: FontWeight.bold, fontSize: 18),),
+             decoration:  BoxDecoration( color: Colors. deepPurple,
+            //  shape: changebutton? BoxShape.circle : BoxShape.rectangle,
+              borderRadius:
+               BorderRadius.circular(
+                changebutton ? 50 : 8)
+              ),
+               ),
+           )
 //elevated button can also be replaced with  text button.
-            ElevatedButton(child: Text ("login"),
-            style: TextButton.styleFrom( minimumSize: Size(120, 50)),
-            onPressed: () {
-              Navigator. pushNamed(context, MyRoutes.homerouts);
-            },
-            )
+            // ElevatedButton(child: Text ("login"),
+            // style: TextButton.styleFrom( minimumSize: Size(120, 50)),
+            // onPressed: () {
+            // Navigator. pushNamed(context, MyRoutes.homerouts);
+            // },
+            // )
           ],
         ),
       ),
